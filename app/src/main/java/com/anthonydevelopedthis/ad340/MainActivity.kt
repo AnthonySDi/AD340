@@ -31,10 +31,7 @@ class MainActivity : AppCompatActivity(), AppNavigator {
 
 
 
-        supportFragmentManager
-            .beginTransaction()
-            .add(R.id.fragmentContainer, LocationEntryFragment())
-            .commit()
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean{
@@ -57,17 +54,17 @@ class MainActivity : AppCompatActivity(), AppNavigator {
     }
 
     override fun navigateToCurrentForecast(zipcode: String) {
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragmentContainer, CurrentForecastFragment.newInstance(zipcode))
-            .commit()
+//        supportFragmentManager
+//            .beginTransaction()
+//            .replace(R.id.fragmentContainer, CurrentForecastFragment.newInstance(zipcode))
+//            .commit()
     }
 
     override fun navigateToLocationEntry() {
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragmentContainer, LocationEntryFragment())
-            .commit()
+//        supportFragmentManager
+//            .beginTransaction()
+//            .replace(R.id.fragmentContainer, LocationEntryFragment())
+//            .commit()
     }
 
 
