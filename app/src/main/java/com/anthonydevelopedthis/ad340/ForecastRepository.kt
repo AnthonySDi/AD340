@@ -61,17 +61,9 @@ class ForecastRepository {
     } // end of loadForecast
 
     fun loadCurrentForecast(zipcode: String){
-        //val randomTemp = Random.nextFloat().rem(100) * 100
-        //val forecast = DailyForecast(Date(), randomTemp, getTempDescription(randomTemp))
-        //_currentForecast.value = forecast
 
         val call = createOpenWeatherMapService().currentWeather(zipcode, "imperial", BuildConfig.OPEN_WEATHER_MAP_API_KEY )
 
-        // Originally in video call.enqueue(object : Callback<CurrentWeather>
-        // this gave an error when I went to fix it gave
-        // call.enqueue(object : Callback<CurrentWeather>, retrofit2.Callback<CurrentWeather> {
-        // Removed Callback<CurrentWeather>,
-        // Might create issues further down the line
         call.enqueue(object : retrofit2.Callback<CurrentWeather> {
             override fun onFailure(call: Call<CurrentWeather>, t: Throwable) {
                 Log.e(ForecastRepository::class.java.simpleName, "error loading current weather", t)

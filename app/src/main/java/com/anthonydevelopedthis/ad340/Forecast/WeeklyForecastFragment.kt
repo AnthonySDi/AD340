@@ -1,7 +1,5 @@
 package com.anthonydevelopedthis.ad340.Forecast
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,7 +13,7 @@ import com.anthonydevelopedthis.ad340.*
 import com.anthonydevelopedthis.ad340.api.DailyForecast
 import com.anthonydevelopedthis.ad340.api.WeeklyForecast
 
-import com.anthonydevelopedthis.ad340.details.ForecastDetailsFragment
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 /**
@@ -76,6 +74,8 @@ class WeeklyForecastFragment : Fragment() {
     private fun showForecastDetails(forecast: DailyForecast){
         val temp = forecast.temp.max
         val description = forecast.weather[0].description
+        val date = forecast.date
+        val icon = forecast.weather[0].icon
         val action = WeeklyForecastFragmentDirections.actionWeeklyForecastFragmentToForecastDetailsFragment(temp, description)
         findNavController().navigate(action)
     }
