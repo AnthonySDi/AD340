@@ -27,9 +27,9 @@ class ForecastDetailsViewModel(args: ForecastDetailsFragmentArgs) : ViewModel() 
     init {
         _viewState.value = ForecastDetailsViewState(
             temp = args.temp,
-            description = args.description,
-            date = DATE_FORMAT.format(Date(args.date * 1000)),
-            iconUrl = "http://openweathermap.org/img/wn/${args.icon}@2x.png"
+            description = args.description
+            //date = DATE_FORMAT.format(Date(args.date * 1000)),
+            //iconUrl = "http://openweathermap.org/img/wn/${args.icon}@2x.png"
         )
     }
 
